@@ -7,6 +7,7 @@ import BgLayout from "@/components/templates/bgLayout";
 import Producty from "@/components/sections/producty";
 import { GlobeDemo } from "@/components/sections/globe";
 import Cta from "@/components/sections/cta";
+import FloatCta from "@/components/sections/floatCta";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       {/* <Products/> */}
       <Producty/>
       <Cta/>
+      <FloatCta/>
     </BgLayout>
   );
 }

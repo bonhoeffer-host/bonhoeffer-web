@@ -4,124 +4,6 @@ import { motion } from 'framer-motion';
 import Header from '../layouts/header';
 import Footer from '../layouts/footer';
 
-// Global Chainsaw Cursor Component
-// const GlobalChainsawCursor = React.memo(function GlobalChainsawCursor() {
-//   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-//   const [isMoving, setIsMoving] = useState(false);
-//   const [mounted, setMounted] = useState(false);
-
-//   useEffect(() => {
-//     setMounted(true);
-//   }, []);
-
-//   // Custom cursor tracking
-//   useEffect(() => {
-//     if (!mounted) return;
-    
-//     let moveTimer = null;
-    
-//     const handleMouseMove = (e) => {
-//       setCursorPos({ x: e.clientX, y: e.clientY });
-//       setIsMoving(true);
-      
-//       // Clear existing timer
-//       if (moveTimer) clearTimeout(moveTimer);
-      
-//       // Set cursor to stationary after 100ms of no movement
-//       moveTimer = setTimeout(() => {
-//         setIsMoving(false);
-//       }, 100);
-//     };
-
-//     document.addEventListener('mousemove', handleMouseMove);
-    
-//     return () => {
-//       document.removeEventListener('mousemove', handleMouseMove);
-//       if (moveTimer) clearTimeout(moveTimer);
-//     };
-//   }, [mounted]);
-
-//   // Hide default cursor globally
-//   useEffect(() => {
-//     if (!mounted) return;
-    
-//     const style = document.createElement('style');
-//     style.id = 'global-chainsaw-cursor-style';
-//     style.textContent = `
-//       * {
-//         cursor: none !important;
-//       }
-//     `;
-//     document.head.appendChild(style);
-    
-//     return () => {
-//       const existingStyle = document.getElementById('global-chainsaw-cursor-style');
-//       if (existingStyle) {
-//         document.head.removeChild(existingStyle);
-//       }
-//     };
-//   }, [mounted]);
-
-//   if (!mounted) return null;
-
-//   return (
-//     <div 
-//       className="fixed pointer-events-none z-[10000]"
-//       style={{
-//         left: cursorPos.x - 16,
-//         top: cursorPos.y - 16,
-//         transition: 'none'
-//       }}
-//     >
-//       <div className="relative w-13 h-13">
-//         {/* Chainsaw Icon - Clean and simple */}
-//         <img 
-//           width="80" 
-//           height="80" 
-//           src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-chainsaw-gardening-flaticons-flat-flat-icons.png" 
-//           alt="chainsaw cursor"
-//           className={`drop-shadow-lg transition-all duration-200 ${isMoving ? 'brightness-125 drop-shadow-xl' : ''}`}
-//           style={{ 
-//             transform: 'rotate(0deg)',
-//             filter: isMoving ? 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))' : 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3))'
-//           }}
-//         />
-        
-//         {/* Spark effects when moving */}
-//         {isMoving && (
-//           <div className="absolute inset-0 pointer-events-none">
-//             <div 
-//               className="absolute w-1 h-1 bg-yellow-400 rounded-full animate-ping"
-//               style={{ 
-//                 top: '20px', 
-//                 left: '25px',
-//                 animationDuration: '0.3s'
-//               }}
-//             />
-//             <div 
-//               className="absolute w-0.5 h-0.5 bg-orange-500 rounded-full animate-ping"
-//               style={{ 
-//                 top: '18px', 
-//                 left: '28px',
-//                 animationDuration: '0.4s',
-//                 animationDelay: '0.1s'
-//               }}
-//             />
-//             <div 
-//               className="absolute w-1 h-1 bg-red-500 rounded-full animate-ping"
-//               style={{ 
-//                 top: '35px', 
-//                 left: '40px',
-//                 animationDuration: '0.5s',
-//                 animationDelay: '0.2s'
-//               }}
-//             />
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// });
 
 // Centralized Global Particle System (consistent across all pages)
 const GlobalParticles = React.memo(function GlobalParticles() {
@@ -185,7 +67,7 @@ const GlobalParticles = React.memo(function GlobalParticles() {
 
 function BgLayout({ children, className = "" }) {
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Global Background Overlay - Black to Transparent to Black */}
       <div className="fixed inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none z-0" />
       
@@ -206,7 +88,25 @@ function BgLayout({ children, className = "" }) {
       <footer className="relative z-20">
         <Footer />
       </footer>
-    </div>
+
+      <style jsx global>{`
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: #989b2e #23272a;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: linear-gradient(135deg, #989b2e 60%, #23272a 100%);
+          border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+      `}</style>
+    </section>
   );
 }
 

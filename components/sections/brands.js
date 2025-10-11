@@ -141,7 +141,7 @@ const Brands = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12"
         >
           {brands.map((brand, index) => (
             <motion.div
@@ -150,7 +150,8 @@ const Brands = () => {
               className="group relative"
             >
               <Link href={brand.website} target="_blank">
-                <div className="bg-white backdrop-blur-sm rounded-2xl p-5 border border-gray-700/50 hover:border-[#989b2e]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#989b2e]/10 transform hover:-translate-y-2">
+                <div className="bg-white backdrop-blur-sm flex flex-col justify-between h-full rounded-2xl p-5 text-center border border-gray-700/50 hover:border-[#989b2e]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#989b2e]/10 transform hover:-translate-y-2">
+                    <div>
                     {/* Category Badge */}
                     {/* <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${brand.gradient} text-white`}>
                     {brand.category}
@@ -177,20 +178,22 @@ const Brands = () => {
                         {brand.name}
                     </h3> */}
                     
-                    <p className="text-gray-900 mb-4 text-xl font-bold">
+                    {/* <p className="text-gray-900 mb-4 text-xl font-bold">
                         {brand.category}
-                    </p>
-                    
-                    {/* <p className="text-gray-500 text-sm mb-6">
-                        {brand.description}
                     </p> */}
+                    
+                    <p className="text-gray-900 mb-4 text-xl font-semibold">
+                        {brand.description}
+                    </p>
 
+                    </div>
+                    </div>
                     {/* Visit Website Button */}
-                    <motion.p
+                    <motion.button
                         // href={brand.website}
                         // target="_blank"
                         // rel="noopener noreferrer"
-                        className={`inline-flex items-center px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r ${brand.gradient} hover:shadow-lg hover:shadow-current/25 transform hover:scale-105 transition-all duration-300 group-hover:animate-pulse`}
+                        className={`inline-flex cursor-pointer items-center px-6 py-3 rounded-xl justify-center font-semibold text-white bg-gradient-to-r ${brand.gradient} hover:shadow-lg hover:shadow-current/25 transform hover:scale-105 transition-all duration-300 group-hover:animate-pulse`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -198,8 +201,7 @@ const Brands = () => {
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                    </motion.p>
-                    </div>
+                    </motion.button>
 
                     {/* Decorative Elements */}
                     {/* <div className="absolute top-4 right-4 w-8 h-8 opacity-20">
@@ -263,7 +265,8 @@ const Brands = () => {
               className="group w-full relative"
             >
               <Link href={brand.website} target="_blank">
-                <div className="bg-white backdrop-blur-sm rounded-2xl p-5 border border-gray-700/50 hover:border-[#989b2e]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#989b2e]/10 transform hover:-translate-y-2">
+                <div className="bg-white backdrop-blur-sm flex flex-col justify-between h-full rounded-2xl p-5 text-center border border-gray-700/50 hover:border-[#989b2e]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#989b2e]/10 transform hover:-translate-y-2">
+                    <div>
                     {/* Category Badge */}
                     {/* <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${brand.gradient} text-white`}>
                     {brand.category}
@@ -290,20 +293,22 @@ const Brands = () => {
                         {brand.name}
                     </h3> */}
                     
-                    <p className="text-gray-900 mb-4 text-xl font-bold">
+                    {/* <p className="text-gray-900 mb-4 text-xl font-bold">
                         {brand.category}
-                    </p>
-                    
-                    {/* <p className="text-gray-500 text-sm mb-6">
-                        {brand.description}
                     </p> */}
+                    
+                    <p className="text-gray-900 mb-4 text-xl font-semibold">
+                        {brand.description}
+                    </p>
 
+                    </div>
+                    </div>
                     {/* Visit Website Button */}
-                    <motion.p
+                    <motion.button
                         // href={brand.website}
                         // target="_blank"
                         // rel="noopener noreferrer"
-                        className={`inline-flex items-center px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r ${brand.gradient} hover:shadow-lg hover:shadow-current/25 transform hover:scale-105 transition-all duration-300 group-hover:animate-pulse`}
+                        className={`inline-flex cursor-pointer items-center px-6 py-3 rounded-xl justify-center font-semibold text-white bg-gradient-to-r ${brand.gradient} hover:shadow-lg hover:shadow-current/25 transform hover:scale-105 transition-all duration-300 group-hover:animate-pulse`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -311,8 +316,7 @@ const Brands = () => {
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                    </motion.p>
-                    </div>
+                    </motion.button>
 
                     {/* Decorative Elements */}
                     {/* <div className="absolute top-4 right-4 w-8 h-8 opacity-20">
@@ -323,8 +327,8 @@ const Brands = () => {
                         className="object-contain filter brightness-0 invert"
                     />
                     </div> */}
-                </div>
-              </Link>
+                </div>              
+                </Link>
             </motion.div>
           ))}
         </motion.div>

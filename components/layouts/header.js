@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from '../../translation/useTranslation';
+import sparePartsData from '../../app/spare-parts/[slug]/models.json';
 import '../../app/globals.css';
 
 function Header() {
@@ -334,29 +335,33 @@ function Header() {
     { name: 'BON-P-KS26', type: 'model', link: '/product/knapsack-sprayer/BON-P-KS26' },
     { name: 'BON-P-KS37', type: 'model', link: '/product/knapsack-sprayer/BON-P-KS37' },
   ];
-  const allSpareParts = [
-    { name: 'Carburetor', slug: 'carburetor', type: 'spare-part', link: '/spare-parts/carburetor' },
-    { name: 'Air Filter', slug: 'air-filter', type: 'spare-part', link: '/spare-parts/air-filter' },
-    { name: 'Fuel Tank', slug: 'fuel-tank', type: 'spare-part', link: '/spare-parts/fuel-tank' },
-    { name: 'Ignition Coil', slug: 'ignition-coil', type: 'spare-part', link: '/spare-parts/ignition-coil' },
-    { name: 'Recoil Starter', slug: 'recoil-starter', type: 'spare-part', link: '/spare-parts/recoil-starter' },
-    { name: 'Spark Plug', slug: 'spark-plug', type: 'spare-part', link: '/spare-parts/spark-plug' },
-    { name: 'Blade', slug: 'blade', type: 'spare-part', link: '/spare-parts/blade' },
-    { name: 'Oil Filter', slug: 'oil-filter', type: 'spare-part', link: '/spare-parts/oil-filter' },
-    { name: 'Starter Rope', slug: 'starter-rope', type: 'spare-part', link: '/spare-parts/starter-rope' },
-    { name: 'Gasket Set', slug: 'gasket-set', type: 'spare-part', link: '/spare-parts/gasket-set' },
-    { name: 'Piston Kit', slug: 'piston-kit', type: 'spare-part', link: '/spare-parts/piston-kit' },
-    { name: 'Cylinder', slug: 'cylinder', type: 'spare-part', link: '/spare-parts/cylinder' },
-    { name: 'Crankshaft', slug: 'crankshaft', type: 'spare-part', link: '/spare-parts/crankshaft' },
-    { name: 'Valve', slug: 'valve', type: 'spare-part', link: '/spare-parts/valve' },
-    { name: 'Fuel Filter', slug: 'fuel-filter', type: 'spare-part', link: '/spare-parts/fuel-filter' },
-    { name: 'Handle', slug: 'handle', type: 'spare-part', link: '/spare-parts/handle' },
-    { name: 'Switch', slug: 'switch', type: 'spare-part', link: '/spare-parts/switch' },
-    { name: 'Clutch', slug: 'clutch', type: 'spare-part', link: '/spare-parts/clutch' },
-    { name: 'Muffler', slug: 'muffler', type: 'spare-part', link: '/spare-parts/muffler' },
-    { name: 'Flywheel', slug: 'flywheel', type: 'spare-part', link: '/spare-parts/flywheel' },
-    // ...add more as needed
-  ];
+  // Map spare parts data from JSON - flatten the nested structure
+  const allSpareParts = [];
+  
+  // Iterate through each category in the sparePartsData object
+  Object.keys(sparePartsData).forEach(categorySlug => {
+    const categoryData = sparePartsData[categorySlug];
+    
+    // Add the category itself as a searchable item
+    allSpareParts.push({
+      name: categorySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+      slug: categorySlug,
+      type: 'spare-part',
+      link: `/spare-parts/${categorySlug}`
+    });
+    
+    // Add each individual part model within the category
+    Object.keys(categoryData).forEach(partId => {
+      const part = categoryData[partId];
+      allSpareParts.push({
+        name: part.name,
+        slug: `${categorySlug}/${partId}`,
+        type: 'spare-part',
+        link: `/spare-parts/${categorySlug}`,
+        compatible: part.compatible
+      });
+    });
+  });
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
 
@@ -442,6 +447,19 @@ function Header() {
     return str.toLowerCase().includes(query.toLowerCase());
   }
 
+  function matchSparePart(part, query) {
+    if (!query) return false;
+    const searchLower = query.toLowerCase();
+    
+    // Search in name
+    if (part.name && part.name.toLowerCase().includes(searchLower)) return true;
+    
+    // Search in compatibility info
+    if (part.compatible && part.compatible.toLowerCase().includes(searchLower)) return true;
+    
+    return false;
+  }
+
   function handleSearchInputChange(e) {
     const value = e.target.value;
     setSearchQuery(value);
@@ -453,7 +471,7 @@ function Header() {
     // Search both products and spare parts
     const results = [
       ...allProducts.filter(p => fuzzyMatch(p.name, value)),
-      ...allSpareParts.filter(s => fuzzyMatch(s.name, value)),
+      ...allSpareParts.filter(s => matchSparePart(s, value)),
     ];
     setSearchResults(results);
     setShowSearchResults(true);
