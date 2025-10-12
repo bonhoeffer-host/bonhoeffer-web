@@ -13,10 +13,8 @@ export default function Home() {
   return (
     <BgLayout>
       <Hero/>
-      {/* <GlobeDemo/> */}
       <Events/>
       <Social/>
-      {/* <Products/> */}
       <Producty/>
       <Cta/>
       <FloatCta/>

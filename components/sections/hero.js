@@ -504,7 +504,7 @@ function Hero() {
             </div>
             <div className="h-px mx-2 bg-gray-600/50"></div>
             <div className="text-center px-1 py-1">
-              <div className="text-2xl font-bold text-white animate-">21+</div>
+              <div className="text-2xl font-bold text-white animate-">22+</div>
               <div className="text-base font-medium text-[#989b2e]">{t('hero.stats.countries', 'Countries')}</div>
             </div>
             <div className="h-px mx-2 bg-gray-600/50"></div>
@@ -559,7 +559,7 @@ function Hero() {
               />
               <button 
                 type="submit"
-                className='w-full sm:w-auto px-6 py-3 bg-[#989b2e] rounded-b-lg sm:rounded-l-none sm:rounded-r-lg transition-all duration-300 font-semibold hover:bg-[#7a7d24]'
+                className='w-full cursor-pointer sm:w-auto px-6 py-3 bg-[#989b2e] rounded-b-lg sm:rounded-l-none sm:rounded-r-lg transition-all duration-300 font-semibold hover:bg-[#7a7d24]'
               >
                 {t('hero.search.button', 'Search')}
               </button>
@@ -614,7 +614,7 @@ function Hero() {
             loop 
             muted
           >
-            <source src="https://bonhoeffermachines.com/en/public/images/Brand_Video.mp4" type="video/mp4" />
+            <source src="https://images.bonhoeffermachines.com/en/public/images/Brand_Video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </motion.div>
@@ -638,7 +638,7 @@ function Hero() {
             viewport={{ once: true }}
           >
             <div className="px-6 py-6 sm:px-12 sm:py-8 mb-3 sm:mb-5 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <h1 className='text-3xl sm:text-4xl md:text-6xl font-bold mb-2 text-[#989b2e]'>{t('hero.stats.global', 'Global')}</h1>
+              <h2 className='text-3xl sm:text-4xl md:text-6xl font-bold mb-2 text-[#989b2e]'>{t('hero.stats.global', 'Global')}</h2>
               <h2 className='text-2xl sm:text-3xl md:text-5xl font-bold text-white'>{t('hero.stats.presence', 'Presence')}</h2>
             </div>
             <div className="space-y-3 sm:space-y-5">
@@ -649,7 +649,7 @@ function Hero() {
               </div>
               <div className="p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
                 <h3 className='text-2xl sm:text-2xl md:text-3xl font-semibold text-white'>
-                  <AnimatedCounter end={21} suffix="+" delay={0.8} /> {t('hero.stats.countries', 'Countries')}
+                  <AnimatedCounter end={22} suffix="+" delay={0.8} /> {t('hero.stats.countries', 'Countries')}
                 </h3>
               </div>
               <div className="p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
