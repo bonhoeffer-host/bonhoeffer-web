@@ -165,7 +165,7 @@ export default function AdminDealer() {
 
           {/* Temporary Notice */}
           <div className="bg-blue-500/20 border border-blue-500/50 rounded-xl p-6 mb-8">
-            <h4 className="text-lg font-semibold text-blue-300 mb-2">🚀 What's Working Now</h4>
+            <h4 className="text-lg font-semibold text-blue-300 mb-2">🚀 What&apos;s Working Now</h4>
             <p className="text-gray-300 text-sm mb-3">
               The dealer application form is live and accepting submissions. Applications are being sent via email notification.
             </p>

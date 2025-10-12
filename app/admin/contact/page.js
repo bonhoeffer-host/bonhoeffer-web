@@ -86,7 +86,7 @@ export default function AdminContact() {
 
           {/* Description */}
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl mx-auto">
-            Your contact form management system is in development. Soon you'll have full control over form submissions, automated responses, and customer inquiries.
+            Your contact form management system is in development. Soon you&apos;ll have full control over form submissions, automated responses, and customer inquiries.
           </p>
 
           {/* Feature Preview */}

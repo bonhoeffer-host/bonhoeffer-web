@@ -85,7 +85,7 @@ export default function AdminHome() {
 
           {/* Description */}
           <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-5xl mx-auto">
-            We're working on bringing you comprehensive homepage management tools. Soon you'll be able to edit hero sections, featured products, testimonials, and all homepage content.
+            We&apos;re working on bringing you comprehensive homepage management tools. Soon you&apos;ll be able to edit hero sections, featured products, testimonials, and all homepage content.
           </p>
 
           {/* Feature Preview */}
