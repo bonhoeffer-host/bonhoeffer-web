@@ -45,20 +45,26 @@ function FloatCta() {
 
   return (
     <section className='fixed bottom-0 sm:hidden left-0 right-0 flex justify-center z-35'>
-      <div className='bg-black text-white p-4 rounded-t-lg shadow-lg w-full md:w-auto text-center flex justify-between items-center gap-4'>
-        <Link href="https://wa.me/919667515523" target="_blank" rel="noopener noreferrer" className="flex-1">
-          <button className='bg-green-500 text-white px-4 py-3 rounded-lg hover:bg-green-600 transition-colors w-full flex items-center justify-center gap-2'>
-            <FaWhatsapp className="text-lg" />
-            WhatsApp
-          </button>
-        </Link>
+      <div className='bg-black text-white p-4 rounded-t-lg shadow-lg w-full text-center grid grid-cols-2'>
+        <div className='bg-[#989b2e] px-2 py-2 text-lg xs:text-xl rounded-lg mr-2 cursor-pointer'>  
+          <Link href="/dealer" className="text-white font-semibold hover:underline">
+            <button>Become a Dealer</button>
+          </Link>
+        </div>
 
-        <Link href="tel:+919667515523" className="flex-1">
-          <button className='bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-600 transition-colors w-full flex items-center justify-center gap-2'>
-            <FaPhone className="text-lg rotate-90" />
-            Call Now
-          </button>
-        </Link>
+        <div className='flex justify-between items-center gap-2 w-full h-full'>
+          <Link href="https://wa.me/919667515523" target="_blank" rel="noopener noreferrer" className="flex-1 h-full">
+            <button className='bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors w-full h-full flex items-center justify-center gap-2'>
+              <FaWhatsapp className="text-2xl" />
+            </button>
+          </Link>
+
+          <Link href="tel:+919667515523" className="flex-1 h-full">
+            <button className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors w-full h-full flex items-center justify-center gap-2'>
+              <FaPhone className="text-2xl rotate-90" />
+            </button>
+          </Link>
+        </div>
       </div>
     </section>
   )

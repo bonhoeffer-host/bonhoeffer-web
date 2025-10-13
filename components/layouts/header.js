@@ -927,7 +927,7 @@ function Header() {
       {/* Mobile/Foldable/Tablet Header (separate, only on < lg screens) */}
       <div className={`lg:hidden fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-900/95 via-gray-800/95 to-gray-900/95 flex items-center justify-between px-4 py-3 transition-all duration-300${mobileMenuOpen ? ' opacity-0 pointer-events-none' : ' opacity-100'}`}>
         <Link href="/">
-          <img src="/logo.png" alt="Bonhoeffer Machines Logo" className="h-15" />
+          <img src="/logo.png" alt="Bonhoeffer Machines Logo" className="h-12" />
         </Link>
         
         {/* Mobile Search and Language Switcher */}
