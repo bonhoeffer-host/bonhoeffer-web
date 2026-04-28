@@ -186,7 +186,7 @@ function Footer() {
                     <p className="text-gray-400 text-xs mb-2">{t('footer.contact.email', 'support@bonhoeffermachines.com')}</p>
                 </Link>
                 <Link href={"https://maps.app.goo.gl/DjTLjeWXfqEtgAsq5"} target="_blank">
-                    <p className="text-gray-400 text-xs">{t('footer.contact.address', 'Plot No. 756, 2nd Floor, Udyog Vihar Phase -5, Gurugram, Haryana India')}</p>
+                    <p className="text-gray-400 text-xs">{t('footer.contact.address', 'Plot No. 756, 2nd Floor, Udyog Vihar Phase -5, Gurugram, Haryana - 122016')}</p>
                 </Link>
               </div>
 
