@@ -632,7 +632,7 @@ function ContactPage() {
 
 						<div className="space-y-2 sm:space-y-4 text-gray-300 text-base sm:text-lg">
 							<p>Plot No. 756, 2nd Floor, Udyog Vihar Phase -5</p>
-							<p>Gurugram, Haryana 122001</p>
+							<p>Gurugram, Haryana 122016</p>
 							<p>India</p>
 						</div>
 
