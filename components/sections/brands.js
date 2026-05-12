@@ -16,15 +16,15 @@ const Brands = () => {
       tagline: "Engineered for the toughest jobs",
       gradient: "from-[#989b2e] to-green-500"
     },
-    {
-      name: "Stronwell",
-      logo: "/logos/stronwell_logo.png",
-      letterLogo: "/logos/stronwell_letter.png",
-      website: "https://stronwell.com",
-      description: "Mid-duty for Regular Use",
-      category: "Frequently Use",
-      tagline: "Built for daily professional use",
-      gradient: "from-orange-500 to-red-500"
+   {
+      name: "Stevron Tools",
+      logo: "/logos/stevron_black_logo.png",
+      letterLogo: "/logos/stevron_letter.png",
+      website: "https://stevrontools.com",
+      description: "Premium Tools for Professionals",
+      category: "Hardware Division",
+      tagline: "Bringing precision to your projects",
+      gradient: "from-green-500 to-emerald-500"
     },
     {
       name: "Mechnova Machines",
@@ -218,120 +218,7 @@ const Brands = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.h2 
-            className="text-3xl md:text-4xl lg:text-5xl max-w-3xl xl:max-w-4xl mx-auto font-bold text-white mb-6"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {/* Find Your Perfect Fit{' '} */}
-            Hardware <span className="bg-gradient-to-r from-[#989b2e] to-[#989b2e] bg-clip-text text-transparent">Division</span>
-            {/* <span className="block bg-gradient-to-r from-[#989b2e] to-[#989b2e] bg-clip-text text-transparent">
-              Meet the Brands Built for You
-            </span> */}
-          </motion.h2>
-          
-          {/* <motion.p 
-            className="text-lg md:text-xl text-gray-300 max-w-5xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Wondering how these brands differ when they all come from the same Bonhoeffer family? Each one serves a unique purpose and audience—from the everyday home gardener to the heavy-duty industrial operator.
-          </motion.p> */}
-        </motion.div>
-
-        {/* Brands Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="flex justify-center items-center mx-auto md:w-[50%] lg:w-[30%] my-12"
-        >
-          {hard.map((brand, index) => (
-            <motion.div
-              key={brand.name}
-              variants={cardVariants}
-              className="group w-full relative"
-            >
-              <Link href={brand.website} target="_blank">
-                <div className="bg-white backdrop-blur-sm flex flex-col justify-between h-full rounded-2xl p-5 text-center border border-gray-700/50 hover:border-[#989b2e]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#989b2e]/10 transform hover:-translate-y-2">
-                    <div>
-                    {/* Category Badge */}
-                    {/* <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${brand.gradient} text-white`}>
-                    {brand.category}
-                    </div> */}
-
-                    {/* Logo Section */}
-                    <motion.div
-                    variants={logoVariants}
-                    className="flex justify-center mb-6"
-                    >
-                    <div className="relative bg-black/10 rounded-xl w-full h-32 group-hover:scale-105 transition-transform duration-500">
-                        <Image
-                        src={brand.logo}
-                        alt={`${brand.name} Logo`}
-                        fill
-                        className="object-contain p-4"
-                        />
-                    </div>
-                    </motion.div>
-
-                    {/* Brand Info */}
-                    <div className="text-center">
-                    {/* <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#989b2e] transition-colors duration-300">
-                        {brand.name}
-                    </h3> */}
-                    
-                    {/* <p className="text-gray-900 mb-4 text-xl font-bold">
-                        {brand.category}
-                    </p> */}
-                    
-                    <p className="text-gray-900 mb-4 text-xl font-semibold">
-                        {brand.description}
-                    </p>
-
-                    </div>
-                    </div>
-                    {/* Visit Website Button */}
-                    <motion.button
-                        // href={brand.website}
-                        // target="_blank"
-                        // rel="noopener noreferrer"
-                        className={`inline-flex cursor-pointer items-center px-6 py-3 rounded-xl justify-center font-semibold text-white bg-gradient-to-r ${brand.gradient} hover:shadow-lg hover:shadow-current/25 transform hover:scale-105 transition-all duration-300 group-hover:animate-pulse`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        {brand.name}
-                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                    </motion.button>
-
-                    {/* Decorative Elements */}
-                    {/* <div className="absolute top-4 right-4 w-8 h-8 opacity-20">
-                    <Image
-                        src={brand.letterLogo}
-                        alt={`${brand.name} Letter`}
-                        fill
-                        className="object-contain filter brightness-0 invert"
-                    />
-                    </div> */}
-                </div>              
-                </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+       
 
         {/* Connection Visualization */}
         {/* <motion.div
