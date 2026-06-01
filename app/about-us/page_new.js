@@ -10,10 +10,9 @@ function Page() {
   // HOD data
   const hodData = [
     
-    { name: "Rajat Sahni", position: "Sales Director", image: "/about/hod/Rajat-Sahni.webp" },
-    { name: "Victor Vargas", position: "Global Head", image: "/about/hod/Victor-Vargas.webp" },
-    { name: "Sudhanshu Pandey", position: "CEO India Business", image: "/about/hod/Sudhanshu-Pandey.webp" },
-    { name: "Sachin Sharma", position: "Manager Financial Planning and Accounting", image: "/about/hod/Sachin-Sharma.webp" }
+    { name: "Rajat Sahni", position: "CEO - LATAM", image: "/about/hod/Rajat-Sahni.webp" },
+    { name: "Sudhanshu Pandey", position: "CEO - India", image: "/about/hod/Sudhanshu-Pandey.webp" },
+    { name: "Sachin Sharma", position: "Finance Controller", image: "/about/hod/Sachin-Sharma.webp" }
     
   ];
 
