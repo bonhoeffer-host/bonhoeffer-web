@@ -10,10 +10,9 @@ function Page() {
   // HOD data
   const hodData = [
     // { name: "Naveen Bakshi", position: "Head of Supply Chain", image: "https://bonhoeffermachines.com/public/images/about-new/Naveen-Bakshi.webp" },
-    { name: "Sachin Sharma", position: "Manager, Financial Planning", image: "https://bonhoeffermachines.com/public/images/about-new/Sachin-Sharma.webp" },
-    { name: "Sudhanshu Pandey", position: "CEO, India Business", image: "https://bonhoeffermachines.com/public/images/about-new/Sudhanshu-Pandey.webp" },
-    { name: "Victor Vargas", position: "Global Head", image: "https://bonhoeffermachines.com/public/images/about-new/Victor-Vargas.webp" },
-    { name: "Rajat Sahni", position: "Sales Director", image: "https://bonhoeffermachines.com/public/images/about-new/Rajat-Sahni.webp" }
+    { name: "Sachin Sharma", position: "Finance Controller", image: "https://bonhoeffermachines.com/public/images/about-new/Sachin-Sharma.webp" },
+    { name: "Sudhanshu Pandey", position: "CEO - India", image: "https://bonhoeffermachines.com/public/images/about-new/Sudhanshu-Pandey.webp" },
+    { name: "Rajat Sahni", position: "CEO - LATAM", image: "https://bonhoeffermachines.com/public/images/about-new/Rajat-Sahni.webp" }
     
   ];
 
